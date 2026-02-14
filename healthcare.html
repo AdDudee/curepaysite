@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CurePay Healthcare Solutions - Superior payment solutions for healthcare practices. HIPAA compliant, PCI certified.">
+    <title>Healthcare Solutions | CurePay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .healthcare-hero {
+            padding: 10rem 0 4rem;
+            background: linear-gradient(135deg, var(--gray-900) 0%, #1a2e1a 50%, var(--gray-800) 100%);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        .healthcare-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(112, 212, 75, 0.15) 0%, transparent 50%);
+        }
+        .healthcare-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .healthcare-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .healthcare-hero .subhead {
+            font-size: 1.5rem;
+            color: var(--gray-300);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .healthcare-hero-svg {
+            max-width: 500px;
+            margin: 2rem auto 0;
+        }
+        .feature-section {
+            padding: 4rem 0;
+        }
+        .feature-section:nth-child(even) {
+            background: var(--gray-50);
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .feature-grid.reverse {
+            direction: rtl;
+        }
+        .feature-grid.reverse > * {
+            direction: ltr;
+        }
+        .feature-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--gray-900);
+        }
+        .feature-content p {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .feature-content strong {
+            color: var(--gray-800);
+        }
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray-600);
+        }
+        .feature-list li::before {
+            content: '•';
+            color: var(--primary-blue);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        .feature-icon {
+            background: linear-gradient(135deg, rgba(112, 212, 75, 0.1) 0%, rgba(154, 228, 122, 0.1) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .feature-icon svg {
+            width: 200px;
+            height: 200px;
+        }
+        .trust-section {
+            background: var(--gray-900);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .trust-section h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        .trust-badge {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+        }
+        .trust-badge .badge-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-blue);
+        }
+        @media (max-width: 768px) {
+            .feature-grid, .feature-grid.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+            }
+            .feature-icon {
+                order: -1;
+            }
+            .healthcare-hero h1 {
+                font-size: 2rem;
+            }
+            .healthcare-hero .subhead {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-particles">
+            <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="30" r="3" fill="#70D44B" opacity="0.3">
+                    <animate attributeName="cx" values="100;150;100" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="300" cy="20" r="2" fill="#9AE47A" opacity="0.4">
+                    <animate attributeName="cy" values="20;35;20" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="500" cy="40" r="2.5" fill="#70D44B" opacity="0.25">
+                    <animate attributeName="cx" values="500;480;500" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="700" cy="15" r="2" fill="#bbf7d0" opacity="0.5">
+                    <animate attributeName="cy" values="15;30;15" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="900" cy="35" r="3" fill="#9AE47A" opacity="0.3">
+                    <animate attributeName="cx" values="900;950;900" dur="7s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="1100" cy="25" r="2" fill="#70D44B" opacity="0.35">
+                    <animate attributeName="opacity" values="0.35;0.6;0.35" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <line x1="100" y1="30" x2="300" y2="20" stroke="#70D44B" stroke-width="0.5" opacity="0.1">
+                    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="700" y1="15" x2="900" y2="35" stroke="#9AE47A" stroke-width="0.5" opacity="0.1">
+                    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="5s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+        </div>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">C</div>
+                CurePay
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="healthcare.html" class="active">Healthcare</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Get Started</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="healthcare-hero">
+        <div class="container">
+            <h1>Healthcare Solutions</h1>
+            <p class="subhead">Healthcare Practices That Expect More Deserve Superior Payment Solutions</p>
+            <p style="color: var(--gray-400); max-width: 600px; margin: 0 auto;">Preserve and Enhance the Doctor/Patient Relationship</p>
+            <a href="contact.html" class="btn btn-primary" style="margin-top: 2rem;">Schedule A Demo</a>
+            
+            <div class="healthcare-hero-svg">
+                <svg viewBox="0 0 400 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Medical cross -->
+                    <rect x="170" y="80" width="60" height="90" rx="8" fill="rgba(112,212,75,0.3)" stroke="#70D44B" stroke-width="2"/>
+                    <rect x="155" y="110" width="90" height="30" rx="8" fill="rgba(112,212,75,0.3)" stroke="#70D44B" stroke-width="2"/>
+                    
+                    <!-- Payment card -->
+                    <rect x="60" y="150" width="80" height="50" rx="6" fill="rgba(255,255,255,0.1)" stroke="#9AE47A" stroke-width="2">
+                        <animate attributeName="y" values="150;140;150" dur="3s" repeatCount="indefinite"/>
+                    </rect>
+                    <line x1="70" y1="165" x2="130" y2="165" stroke="#9AE47A" stroke-width="2"/>
+                    <rect x="70" y="175" width="30" height="15" rx="2" fill="rgba(154,228,122,0.4)"/>
+                    
+                    <!-- Mobile device -->
+                    <rect x="270" y="130" width="50" height="80" rx="6" fill="rgba(255,255,255,0.1)" stroke="#9AE47A" stroke-width="2">
+                        <animate attributeName="y" values="130;120;130" dur="2.5s" repeatCount="indefinite"/>
+                    </rect>
+                    <circle cx="295" cy="195" r="5" fill="#70D44B"/>
+                    
+                    <!-- Connection lines -->
+                    <line x1="140" y1="170" x2="170" y2="125" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5,5">
+                        <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s" repeatCount="indefinite"/>
+                    </line>
+                    <line x1="230" y1="125" x2="270" y2="160" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-dasharray="5,5">
+                        <animate attributeName="stroke-dashoffset" from="0" to="20" dur="1s" repeatCount="indefinite"/>
+                    </line>
+                    
+                    <!-- Shield checkmark -->
+                    <circle cx="200" cy="220" r="20" fill="rgba(112,212,75,0.5)" stroke="#70D44B" stroke-width="2">
+                        <animate attributeName="r" values="18;22;18" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <path d="M190 220 L197 227 L212 212" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature: Reduce Accounts Receivable -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2>Reduce Accounts Receivable</h2>
+                    <p>CurePay helps private practices collect more of what they earn by making patient payments simple and automatic. Our integrated platform supports text-to-pay, contactless checkout, recurring charges, ongoing treatment plans, and balance recovery for amounts not covered by insurance.</p>
+                    <p><strong>How this works in a private practice:</strong></p>
+                    <ul class="feature-list">
+                        <li>A dermatology office sends a text to pay link as soon as insurance adjudicates, so patients can settle the remaining balance from their phone instead of ignoring paper statements.</li>
+                        <li>A physical therapy clinic sets up recurring charges for ongoing treatment plans, which eliminates manual billing and reduces missed payments each month.</li>
+                        <li>A family medicine practice uses contactless checkout to collect copays at the time of service, which cuts down on open balances and shortens the billing cycle.</li>
+                    </ul>
+                    <p>When patients have convenient ways to pay, accounts receivable shrinks and cash flow improves.</p>
+                </div>
+                <div class="feature-icon">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="80" fill="rgba(112,212,75,0.1)" stroke="#70D44B" stroke-width="2"/>
+                        <path d="M60 100 L90 100 L100 80 L110 120 L120 90 L140 90" stroke="#70D44B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <text x="100" y="150" text-anchor="middle" fill="#70D44B" font-size="24" font-weight="bold">$</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature: Streamline Operations -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid reverse">
+                <div class="feature-content">
+                    <h2>Streamline Operations</h2>
+                    <p>CurePay integrates directly with most EMRs and practice management software so payment posting happens automatically. This reduces administrative work, limits errors, and frees up your team to focus on patient care rather than billing tasks.</p>
+                    <p><strong>How this works in a private practice:</strong></p>
+                    <ul class="feature-list">
+                        <li>A pediatric office eliminates the need for staff to manually post credit card transactions, since CurePay syncs payments back into the EMR in real time.</li>
+                        <li>A chiropractic clinic uses our integrated tools to manage payment plans for long-term treatment packages without keeping spreadsheets or paper logs.</li>
+                        <li>A dental office protects the health of staff and patients by offering contactless payment.</li>
+                    </ul>
+                    <p>CurePay's discreet payment process keeps financial conversations smooth and simple, protecting the doctor/patient relationship.</p>
+                </div>
+                <div class="feature-icon">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="60" width="120" height="80" rx="8" fill="rgba(112,212,75,0.1)" stroke="#70D44B" stroke-width="2"/>
+                        <line x1="60" y1="90" x2="140" y2="90" stroke="#9AE47A" stroke-width="3"/>
+                        <line x1="60" y1="105" x2="120" y2="105" stroke="#9AE47A" stroke-width="3"/>
+                        <line x1="60" y1="120" x2="100" y2="120" stroke="#9AE47A" stroke-width="3"/>
+                        <circle cx="150" cy="120" r="25" fill="#70D44B"/>
+                        <path d="M140 120 L148 128 L162 114" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature: Secure and Compliant -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2>Secure and Compliant</h2>
+                    <p>CurePay is built for healthcare. Our technology is HIPAA compliant and PCI certified to make sure patient data stays protected at every stage of the payment process.</p>
+                    <p><strong>What this means for your practice:</strong></p>
+                    <ul class="feature-list">
+                        <li>Payment information is encrypted from end to end.</li>
+                        <li>Sensitive data never touches your internal systems, lowering your risk exposure.</li>
+                        <li>Patients feel more comfortable paying digitally because they know their information is secured to healthcare level standards.</li>
+                    </ul>
+                    <p>Compliance and security are never an afterthought—they are built into the foundation of our platform.</p>
+                </div>
+                <div class="feature-icon">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M100 30 L160 55 L160 100 C160 140 100 170 100 170 C100 170 40 140 40 100 L40 55 Z" fill="rgba(112,212,75,0.2)" stroke="#70D44B" stroke-width="3"/>
+                        <path d="M80 100 L95 115 L125 85" stroke="#70D44B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature: Doctor/Patient Relationship -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid reverse">
+                <div class="feature-content">
+                    <h2>Preserve and Enhance the Doctor/Patient Relationship</h2>
+                    <p>CurePay makes payments easier for patients and simpler for your staff. With all healthcare payments in one place, communication stays clear and predictable, which helps strengthen trust between your practice and your patients.</p>
+                    <p><strong>How this benefits your practice:</strong></p>
+                    <ul class="feature-list">
+                        <li>Patients appreciate simple payment requests sent by text instead of mailed statements.</li>
+                        <li>Providers avoid uncomfortable collection conversations because the system handles reminders and follow-ups automatically.</li>
+                        <li>Staff spends less time discussing balances and more time supporting care.</li>
+                    </ul>
+                    <p>A better payment experience leads to happier patients and fewer administrative headaches.</p>
+                </div>
+                <div class="feature-icon">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="70" cy="80" r="30" fill="rgba(112,212,75,0.2)" stroke="#70D44B" stroke-width="2"/>
+                        <circle cx="70" cy="70" r="12" fill="#70D44B"/>
+                        <path d="M45 110 Q70 130 95 110" fill="rgba(112,212,75,0.3)"/>
+                        <circle cx="130" cy="80" r="30" fill="rgba(112,212,75,0.2)" stroke="#70D44B" stroke-width="2"/>
+                        <circle cx="130" cy="70" r="12" fill="#70D44B"/>
+                        <path d="M105 110 Q130 130 155 110" fill="rgba(112,212,75,0.3)"/>
+                        <path d="M80 140 L100 160 L120 140" stroke="#70D44B" stroke-width="4" stroke-linecap="round" fill="none">
+                            <animate attributeName="stroke-dashoffset" from="100" to="0" dur="1.5s" repeatCount="indefinite"/>
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature: Everything in One Place -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-content">
+                    <h2>Everything in One Place</h2>
+                    <p>Our intelligent payment tools can integrate directly with your existing EMR or practice management system. The result is fewer outstanding balances, faster payments, and an improved experience for every patient who walks through your doors.</p>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem;">Schedule A Demo</a>
+                </div>
+                <div class="feature-icon">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="60" y="40" width="80" height="120" rx="8" fill="rgba(112,212,75,0.1)" stroke="#70D44B" stroke-width="2"/>
+                        <rect x="70" y="60" width="60" height="40" rx="4" fill="rgba(154,228,122,0.3)"/>
+                        <circle cx="100" cy="130" r="15" fill="#70D44B"/>
+                        <rect x="30" y="80" width="30" height="40" rx="4" fill="rgba(112,212,75,0.2)" stroke="#9AE47A" stroke-width="1.5">
+                            <animate attributeName="x" values="30;25;30" dur="2s" repeatCount="indefinite"/>
+                        </rect>
+                        <rect x="140" y="80" width="30" height="40" rx="4" fill="rgba(112,212,75,0.2)" stroke="#9AE47A" stroke-width="1.5">
+                            <animate attributeName="x" values="140;145;140" dur="2s" repeatCount="indefinite"/>
+                        </rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>Trusted by Healthcare Professionals</h2>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="badge-icon">🏥</div>
+                    <div>HIPAA Compliant</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="badge-icon">🔒</div>
+                    <div>PCI Certified</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="badge-icon">⚡</div>
+                    <div>Real-time Sync</div>
+                </div>
+                <div class="trust-badge">
+                    <div class="badge-icon">📱</div>
+                    <div>Text-to-Pay</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta cta-animated">
+        <div class="cta-bg-elements">
+            <svg class="cta-bg-svg" viewBox="0 0 800 400" preserveAspectRatio="none">
+                <circle cx="100" cy="100" r="80" fill="rgba(255,255,255,0.03)">
+                    <animate attributeName="r" values="80;100;80" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="700" cy="300" r="120" fill="rgba(255,255,255,0.02)">
+                    <animate attributeName="r" values="120;150;120" dur="5s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2>Ready to give your practice the superior payment solution it deserves?</h2>
+            <p>Send us a message to schedule your free demonstration</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">C</div>
+                        CurePay
+                    </a>
+                    <p>Your trusted partner for comprehensive business solutions. Empowering businesses through technology.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">Payment Solutions</a></li>
+                        <li><a href="healthcare.html">Healthcare Solutions</a></li>
+                        <li><a href="pricing.html">IT Managed Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>4310 Mesa Dr</li>
+                        <li>Denton, TX 76207-3434</li>
+                        <li>(855) 287-3729</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CurePay. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Sync nav particle animations across page loads
+        (function() {
+            const now = Date.now() / 1000;
+            const animations = document.querySelectorAll('.nav-particles animate, .nav-particles animateMotion');
+            animations.forEach(anim => {
+                const dur = parseFloat(anim.getAttribute('dur')) || 4;
+                const offset = -(now % dur);
+                anim.setAttribute('begin', offset + 's');
+            });
+        })();
+    </script>
+</body>
+</html>

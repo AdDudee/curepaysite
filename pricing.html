@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CurePay pricing - Simple, transparent IT packages. Choose the plan that fits your business.">
+    <title>Pricing | CurePay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Pricing Page Specific Styles */
+
+        /* Packages Section */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 2px solid var(--gray-100);
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .package-card.featured {
+            border-color: var(--primary-blue);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-blue);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .package-header {
+            text-align: center;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-100);
+            margin-bottom: 1.5rem;
+        }
+
+        .package-header h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .package-header p {
+            color: var(--gray-500);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .package-price {
+            margin: 1.5rem 0;
+        }
+
+        .package-price .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+
+        .package-price .period {
+            color: var(--gray-500);
+        }
+
+        .package-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .package-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--gray-600);
+        }
+
+        .package-features li::before {
+            content: '✓';
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+
+        .package-features li.disabled {
+            color: var(--gray-400);
+        }
+
+        .package-features li.disabled::before {
+            content: '—';
+            color: var(--gray-300);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-calculator {
+                padding: 1.5rem;
+            }
+
+            .price-summary-header {
+                flex-direction: column;
+            }
+
+            .total-price {
+                text-align: left;
+            }
+
+            .price-amount {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <!-- Animated Nav Particles -->
+        <div class="nav-particles">
+            <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="30" r="3" fill="#70D44B" opacity="0.3">
+                    <animate attributeName="cx" values="100;150;100" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="300" cy="20" r="2" fill="#9AE47A" opacity="0.4">
+                    <animate attributeName="cy" values="20;35;20" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="500" cy="40" r="2.5" fill="#70D44B" opacity="0.25">
+                    <animate attributeName="cx" values="500;480;500" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="700" cy="15" r="2" fill="#bbf7d0" opacity="0.5">
+                    <animate attributeName="cy" values="15;30;15" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="900" cy="35" r="3" fill="#9AE47A" opacity="0.3">
+                    <animate attributeName="cx" values="900;950;900" dur="7s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="1100" cy="25" r="2" fill="#70D44B" opacity="0.35">
+                    <animate attributeName="opacity" values="0.35;0.6;0.35" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <line x1="100" y1="30" x2="300" y2="20" stroke="#70D44B" stroke-width="0.5" opacity="0.1">
+                    <animate attributeName="opacity" values="0.1;0.2;0.1" dur="4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="700" y1="15" x2="900" y2="35" stroke="#9AE47A" stroke-width="0.5" opacity="0.1">
+                    <animate attributeName="opacity" values="0.1;0.15;0.1" dur="5s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+        </div>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">C</div>
+                CurePay
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="healthcare.html">Healthcare</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Get Started</a></li>
+            </ul>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header with Banner -->
+    <section class="page-header pricing-header">
+        <div class="container">
+            <div class="pricing-hero">
+                <div class="pricing-hero-text">
+                    <h1>Simple, Transparent Pricing</h1>
+                    <p>Choose the package that fits your business. No hidden fees, no long-term contracts required.</p>
+                </div>
+                <div class="pricing-hero-visual">
+                    <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Chart bars -->
+                        <rect x="80" y="180" width="40" height="80" rx="4" fill="rgba(154,228,122,0.4)" stroke="#9AE47A" stroke-width="2">
+                            <animate attributeName="height" values="60;80;60" dur="3s" repeatCount="indefinite"/>
+                            <animate attributeName="y" values="200;180;200" dur="3s" repeatCount="indefinite"/>
+                        </rect>
+                        <rect x="140" y="140" width="40" height="120" rx="4" fill="rgba(112,212,75,0.4)" stroke="#70D44B" stroke-width="2">
+                            <animate attributeName="height" values="100;120;100" dur="2.5s" repeatCount="indefinite"/>
+                            <animate attributeName="y" values="160;140;160" dur="2.5s" repeatCount="indefinite"/>
+                        </rect>
+                        <rect x="200" y="100" width="40" height="160" rx="4" fill="rgba(112,212,75,0.5)" stroke="#70D44B" stroke-width="2">
+                            <animate attributeName="height" values="140;160;140" dur="2.8s" repeatCount="indefinite"/>
+                            <animate attributeName="y" values="120;100;120" dur="2.8s" repeatCount="indefinite"/>
+                        </rect>
+                        <rect x="260" y="120" width="40" height="140" rx="4" fill="rgba(154,228,122,0.45)" stroke="#9AE47A" stroke-width="2">
+                            <animate attributeName="height" values="120;140;120" dur="3.2s" repeatCount="indefinite"/>
+                            <animate attributeName="y" values="140;120;140" dur="3.2s" repeatCount="indefinite"/>
+                        </rect>
+                        
+                        <!-- Baseline -->
+                        <line x1="60" y1="260" x2="340" y2="260" stroke="#9AE47A" stroke-width="2" opacity="0.5"/>
+                        
+                        <!-- Growth arrow -->
+                        <path d="M70 200 Q150 180 180 120 Q210 60 320 50" stroke="#70D44B" stroke-width="3" fill="none" stroke-linecap="round">
+                            <animate attributeName="stroke-dasharray" values="0,500;300,500" dur="2s" repeatCount="indefinite"/>
+                        </path>
+                        <circle cx="320" cy="50" r="8" fill="#70D44B">
+                            <animate attributeName="r" values="6;10;6" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Dollar signs -->
+                        <text x="95" y="170" fill="#9AE47A" font-size="16" font-weight="bold" opacity="0.8">$</text>
+                        <text x="155" y="130" fill="#70D44B" font-size="16" font-weight="bold" opacity="0.8">$</text>
+                        <text x="215" y="90" fill="#70D44B" font-size="18" font-weight="bold">$</text>
+                        <text x="275" y="110" fill="#9AE47A" font-size="16" font-weight="bold" opacity="0.8">$</text>
+                        
+                        <!-- Floating checkmarks -->
+                        <circle cx="350" cy="100" r="15" fill="rgba(112,212,75,0.3)" stroke="#70D44B" stroke-width="2"/>
+                        <path d="M343 100 L348 105 L358 95" stroke="#70D44B" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <circle cx="50" cy="140" r="12" fill="rgba(154,228,122,0.3)" stroke="#9AE47A" stroke-width="1.5">
+                            <animate attributeName="cy" values="140;130;140" dur="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <path d="M44 140 L48 144 L56 136" stroke="#9AE47A" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .pricing-header {
+            padding: 8rem 0 3rem;
+        }
+        .pricing-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .pricing-hero-text {
+            text-align: left;
+        }
+        .pricing-hero-text h1 {
+            margin-bottom: 1rem;
+        }
+        .pricing-hero-text p {
+            max-width: 100%;
+            margin: 0;
+        }
+        .pricing-hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .pricing-hero-visual svg {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            .pricing-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .pricing-hero-text {
+                text-align: center;
+            }
+            .pricing-hero-visual {
+                order: -1;
+            }
+            .pricing-hero-visual svg {
+                max-width: 280px;
+            }
+        }
+    </style>
+
+    <!-- Pricing Packages -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Package</h2>
+                <p>Simple, transparent pricing designed for businesses of all sizes.</p>
+            </div>
+            <div class="packages-grid">
+                <!-- Essential -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Essential</h3>
+                        <p>Basic IT support for small teams</p>
+                        <div class="package-price">
+                            <span class="amount">$45</span>
+                            <span class="period">/user/month</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Help Desk Support</li>
+                        <li>Proactive Monitoring</li>
+                        <li>Endpoint Protection</li>
+                        <li>Patch Management</li>
+                        <li class="disabled">Cloud Backup</li>
+                        <li class="disabled">Security Training</li>
+                        <li class="disabled">Disaster Recovery</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Get Started</a>
+                </div>
+
+                <!-- Professional -->
+                <div class="package-card featured">
+                    <span class="package-badge">Most Popular</span>
+                    <div class="package-header">
+                        <h3>Professional</h3>
+                        <p>Complete IT management for growing businesses</p>
+                        <div class="package-price">
+                            <span class="amount">$85</span>
+                            <span class="period">/user/month</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Help Desk Support</li>
+                        <li>Proactive Monitoring</li>
+                        <li>Endpoint Protection</li>
+                        <li>Patch Management</li>
+                        <li>Cloud Backup</li>
+                        <li>Security Training</li>
+                        <li>Email Security</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="width: 100%;">Get Started</a>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <h3>Enterprise</h3>
+                        <p>Advanced security & compliance for regulated industries</p>
+                        <div class="package-price">
+                            <span class="amount">$135</span>
+                            <span class="period">/user/month</span>
+                        </div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Everything in Professional</li>
+                        <li>SIEM & Threat Detection</li>
+                        <li>Disaster Recovery</li>
+                        <li>Compliance Management</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Quarterly Business Reviews</li>
+                        <li>Priority Response SLA</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Pricing FAQ</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Are there any setup fees?</h3>
+                    <p>We offer free onboarding for annual contracts. Month-to-month plans have a one-time setup fee based on your environment complexity.</p>
+                </div>
+                <div class="service-card">
+                    <h3>What's the minimum contract?</h3>
+                    <p>We offer both month-to-month and annual agreements. Annual contracts receive a 10% discount on all services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Can I change my package later?</h3>
+                    <p>Absolutely! You can add or remove services at any time. Changes take effect on your next billing cycle.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Do you offer volume discounts?</h3>
+                    <p>Yes! Organizations with 100+ employees receive tiered discounts. Contact us for custom enterprise pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta cta-animated">
+        <div class="cta-bg-elements">
+            <svg class="cta-bg-svg" viewBox="0 0 800 400" preserveAspectRatio="none">
+                <circle cx="100" cy="100" r="90" fill="rgba(255,255,255,0.03)">
+                    <animate attributeName="r" values="90;120;90" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="700" cy="300" r="70" fill="rgba(255,255,255,0.025)">
+                    <animate attributeName="r" values="70;100;70" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <path d="M0 380 Q200 340 400 380 T800 380" stroke="rgba(255,255,255,0.04)" stroke-width="2" fill="none">
+                    <animate attributeName="d" values="M0 380 Q200 340 400 380 T800 380;M0 380 Q200 400 400 360 T800 380;M0 380 Q200 340 400 380 T800 380" dur="6s" repeatCount="indefinite"/>
+                </path>
+            </svg>
+        </div>
+        <div class="container" style="position: relative; z-index: 1;">
+            <h2>Need Help Choosing?</h2>
+            <p>Our team can help you find the perfect package for your business.</p>
+            <a href="contact.html" class="btn btn-primary">Schedule Free Consultation</a>
+        </div>
+    </section>
+    
+    <style>
+        .cta-animated {
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-bg-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+        .cta-bg-svg {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <div class="logo-icon">C</div>
+                        CurePay
+                    </a>
+                    <p>Your trusted partner for comprehensive business solutions. Empowering businesses through technology.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Facebook">f</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Digital Marketing</a></li>
+                        <li><a href="services.html">Payment Solutions</a></li>
+                        <li><a href="healthcare.html">Healthcare Solutions</a></li>
+                        <li><a href="pricing.html">IT Managed Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>4310 Mesa Dr</li>
+                        <li>Denton, TX 76207-3434</li>
+                        <li>(855) 287-3729</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CurePay. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Sync nav particle animations across page loads
+        (function() {
+            const now = Date.now() / 1000;
+            const animations = document.querySelectorAll('.nav-particles animate, .nav-particles animateMotion');
+            animations.forEach(anim => {
+                const dur = parseFloat(anim.getAttribute('dur')) || 4;
+                const offset = -(now % dur);
+                anim.setAttribute('begin', offset + 's');
+            });
+        })();
+    </script>
+</body>
+</html>
